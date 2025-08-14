@@ -1,0 +1,57 @@
+<header class="header">
+    <div class="header-container">
+        <!-- Logo/Nome à esquerda -->
+        <div class="header-logo">
+            <h1 class="header-heading">
+                <a href="{% url 'contact:index' %}" class="header-link">
+                    Agenda
+                </a>
+            </h1>
+        </div>
+
+        <!-- Barra de busca no centro -->
+        <div class="header-search">
+            <form action="{% url 'contact:search' %}" method="GET">
+                <input type="text" 
+                class="search-input" 
+                placeholder="Buscar" 
+                id="search" name="q"
+                value="{{ request.GET.q.strip }}">
+            </form>
+        </div>
+
+        <!-- Menu à direita -->
+        <nav class="header-menu">
+            <ul class="menu-list">
+                {% if user.is_authenticated %}
+                    <li class="menu-item">
+                        <a href="{% url 'contact:create' %}" class="menu-link">
+                            Criar
+                        </a>
+                    </li>  
+                    <li class="menu-item">
+                        <a href="{% url 'contact:user_update' %}" class="menu-link">
+                            Perfil
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'contact:logout' %}" class="menu-link">
+                            Sair 
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="menu-item">
+                        <a href="{% url 'contact:logout' %}" class="menu-link">
+                            Entrar 
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'contact:register' %}" class="menu-link">
+                            Cadastrar
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>
