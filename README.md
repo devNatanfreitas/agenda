@@ -3,10 +3,6 @@
 
 Uma aplicação web completa para gerenciamento de contatos desenvolvida com Django. Permite criar, visualizar, editar e organizar seus contatos com fotos e categorias.
 
-## 🚀 Demo
-
-Acesse a aplicação em funcionamento: https://agenda-q6n3.onrender.com
-
 ## ✨ Funcionalidades
 
 - ✅ **Gerenciamento completo de contatos** (CRUD)
