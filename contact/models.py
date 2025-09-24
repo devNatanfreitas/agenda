@@ -3,6 +3,9 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from contact.supabase_storage import SupabaseStorage
 
+def get_supabase_storage():
+    return SupabaseStorage()
+
 class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
@@ -21,7 +24,7 @@ class Contact(models.Model):
     create_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
     show = models.BooleanField(default=True)
-    picture = models.ImageField(blank=True, upload_to='contacts/', storage=SupabaseStorage())
+    picture = models.ImageField(blank=True, upload_to='contacts/', storage=get_supabase_storage)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     owner =  models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
