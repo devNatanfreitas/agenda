@@ -54,12 +54,8 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configure as variáveis de ambiente
-```bash
-# Copie o arquivo de exemplo
-cp .env.example .env
-```
 
-Edite o arquivo `.env` com suas configurações:
+Crie um arquivo chamado `.env` na raiz do projeto e adicione as seguintes variáveis:
 
 ```env
 # Django Settings
